@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Resume Maker</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="row" id="heading">
+        <div class="col"><img src="https://cdn2.iconfinder.com/data/icons/reports-and-analytics-7/49/30-512.png" id="hi" height="70px">
+        Resume Maker</div>
+    </div>
+    <h4><b>Select the tabs below and fill out your information in the input fields. Leave the fields that you do not wish to put in your resume. Once you are finished click on the submit button and then download the pdf file.</b></h4>
+
+    <div class="tab">
+    <button class="tablinks" onclick="openCity(event, 'a')">Personal Info</button>
+    <button class="tablinks" onclick="openCity(event, '2')">Education</button>
+    <button class="tablinks" onclick="openCity(event, '3')">Skills</button>
+    <button class="tablinks" onclick="openCity(event, '4')">Projects</button>
+    <button class="tablinks" onclick="openCity(event, '5')">Work Experience</button>
+    <button class="tablinks" onclick="openCity(event, '6')">Achievements</button>
+    </div>          
+    
+    <div id="a" class="tabcontent">    
+    <h2>Enter your personal information:-</h2>
+    <div class="row">
+        <div class="col my-2"> Name:- </div>
+        <div class="col-6  my-2"><input id='name'></div>
+    </div>
+    <div class="row">
+        <div class="col my-2"> Email ID:- </div>
+        <div class="col-6  my-2"> <input type="email" id='email'> </div>
+    </div>
+    <div class="row">
+        <div class="col my-2"> Phone number:- </div>
+        <div class="col-6  my-2"><input type="tel" pattern="[0-9]{10}" maxlength="10" id='phone'></div>
+    </div>
+    <div class="row">
+        <div class="col my-2"> Address:- </div>
+        <div class="col-6  my-2"><textarea cols="40" rows="2" name="address" id="address"></textarea></div>
+    </div>
+    <div class="row">
+        <div class="col my-2"> City:- </div>
+        <div class="col-6  my-2"><input id='city'></div>
+    </div>
+    <div class="row">
+        <div class="col my-2"> State:- </div>
+        <div class="col-6  my-2"><input id='state'></div>
+    </div>
+    <div class="row">
+        <div class="col my-2"> Pin code:- </div>
+        <div class="col-6  my-2"><input minlength="6" maxlength="6" pattern="[0-9]" id='pin'></div>
+    </div>
+    <div class="row">
+        <div class="col-8" style="margin-bottom: 10px;">Objective:-</div>
+        <div class="col-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-8"><textarea cols="90" rows="5" id='obj'></textarea></div>
+        <div class="col-4"></div>
+    </div>
+    </div>
+
+    <div id="2" class="tabcontent">    
+        <h2>Enter your education details:- </h2>
+        <div id="educont">
+            <div id="aa2" style="display: none;">
+                <div class="row">
+                    <div class="col-6 my-2"> Institution name:- </div>
+                    <div class="col-4  my-2"><input size="40" class='a21'></div>
+                    <div class="col-2">
+                        <span class="close" onclick="this.parentElement.parentElement.parentElement.parentNode.removeChild(this.parentElement.parentElement.parentElement);">&times;</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col my-2"> City:- </div>
+                    <div class="col-6  my-2"><input class='a22'></div>
+                </div>
+                <div class="row">
+                    <div class="col my-2"> State:- </div>
+                    <div class="col-6  my-2"><input class='a23'></div>
+                </div>
+                <div>
+                <div class="row">
+                    <div class="col-6 my-2"> Degree:- </div>
+                    <div class="col-4  my-2">
+                        <select name="deg" onclick="othdeg(event)" class='a24'>
+                            <option value="">- Select a degree -</option>
+                            <option value="Class X">Class X</option>
+                            <option value="Class XII">Class XII</option>
+                            <option value="Associate of Arts">Associate of Arts (A.A.)</option>
+                            <option value="Associate of Science">Associate of Science (A.S.)</option>
+                            <option value="Associate of Applied Science">Associate of Applied Science (AAS)</option>
+                            <option value="Bachelor of Arts">Bachelor of Arts (B.A.)</option>
+                            <option value="Bachelor of Science">Bachelor of Science (B.S.)</option>
+                            <option value="Bachelor of Business Administration">Bachelor of Business Administration (BBA)</option>
+                            <option value="Bachelor of Technology">Bachelor of Technology (B.tech)</option>
+                            <option value="Master of Arts">Master of Arts (M.A.)</option>
+                            <option value="Master of Science">Master of Science (M.S.)</option>
+                            <option value="Master of Business Administration">Master of Business Administration (MBA)</option>
+                            <option value="Maser of Technology">Master of Technology (M.Tech)</option>
+                            <option value="Juris Doctor">Juris Doctor (J.D.)</option>
+                            <option value="Doctor of Medicine">Doctor of Medicine (M.D.)</option>
+                            <option value="Doctor of Philosophy">Doctor of Philosophy (Ph.D)</option>
+                            <option value="Other">Custom Degree</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="row" style="display: none;">
+                    <div class="col my-2">Custom degree:- </div>
+                    <div class="col-6  my-2"><input size="35" class='a25'></div>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="col my-2"> Field of study:- </div>
+                    <div class="col-6  my-2"><input class='a26'></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 my-2"> Start date:- </div>
+                    <div class="col-3  my-2"> 
+                        <select name="Month" class='a27'>
+                            <option value="">- Month -</option>
+                            <option value="January">January</option>
+                            <option value="Febuary">Febuary</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                    </div>
+                    <div class="col-3  my-2"> 
+                        <select name="Year" class='a28'><option value="">- Year -</option></select>
+                    </div>
+                </div>
+                    <div>
+                    <div class="row">
+                        <div class="col-6 my-2"> Graduation date:- </div>
+                        <div class="col-3  my-2"> 
+                            <select name="Month" id="s11" class='a29'>
+                                <option value="">- Month -</option>
+                                <option value="January">January</option>
+                                <option value="Febuary">Febuary</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                        </div>
+                        <div class="col-3  my-2"> 
+                            <select name="Year" id="s12" class='a210'><option value="">- Year -</option></select>
+                        </div>
+                    </div>
+                        <label class="container">I presently attend here.
+                            <input type="checkbox" id="c1" onclick="checkboxfn(event)" class='a211'>
+                            <span class="checkmark"></span>
+                        </label></div>
+                        <div class="row" style="padding-bottom: 0px;">
+                            <div class="col-6 my-2"> Grade:- </div>
+                            <div class="col-3 my-2"><input size="10" class='a212'></div>
+                            <div class="col-3 my-2">
+                                <select  class='a220'>
+                                    <option value="">- Grading -</option>
+                                    <option value="%">Percentage</option>
+                                    <option value="CGPA">CGPA</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!--[Note:- for percentage, add '%' in front of marks and for GPA, add GPA or CGPA in front of marks.]-->
+                    <br><hr>
+            </div>
+            </div>
+
+            <div class="col-6  my-2"><button class="btn btn-primary" id="skill" onclick="xx2()">Add</button></div>
+        </div>
+    
+    <div id="3" class="tabcontent">
+        <h2>Enter your skills:- </h2>
+        <div class="row">
+            <div class="col my-2">Skill</div>
+            <div class="col-6  my-2">Level</div>
+        </div>
+        <div id="skillcont">
+            <div class="row" id="aa3" style="display: none;">
+                <div class="col-6"><input id="newskill" class='a31'></div>
+                <div class="col-4">
+                    <select class='a32'>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Expert">Expert</option>
+                    </select>
+                </div>
+                <div class="col-2">
+                <span class="close" onclick="this.parentElement.parentElement.parentNode.removeChild(this.parentElement.parentElement);">&times;</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6  my-2"><button class="btn btn-primary" id="skill" onclick="xx3()">Add</button></div>
+        </div>
+
+        <div id="4" class="tabcontent">
+        <h2>Enter research papers and projects you completed:- </h2>
+        <div id="procont">
+            <div id="aa4" style="display: none;">
+            <div class="row">
+                <div class="col-6 my-2"> Title:- </div>
+                <div class="col-4  my-2"><input class='a41'></div>
+                <div class="col-2">
+                    <span class="close" onclick="this.parentElement.parentElement.parentElement.parentNode.removeChild(this.parentElement.parentElement.parentElement);">&times;</span>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-8" style="margin-bottom: 10px;">Description:-</textarea></div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-8"><textarea cols="90" rows="5" class='a42'></textarea></div>
+            <div class="col-4"></div>
+        </div>
+        <br><hr>
+        </div>
+        </div>
+        <div class="col-6  my-2"><button class="btn btn-primary" id="skill" onclick="xx4()">Add</button></div>
+        </div>
+
+        <div id="5" class="tabcontent">
+        <h2>Enter your trainings, internships and previous employment details:- </h2>
+        <div id="expcont">
+            <div id="aa5" style="display: none;">
+                <div class="row">
+                    <div class="col-6 my-2"> Employer/Institute:- </div>
+                    <div class="col-4  my-2"><input class='a51'></div>
+                    <div class="col-2">
+                        <span class="close" onclick="this.parentElement.parentElement.parentElement.parentNode.removeChild(this.parentElement.parentElement.parentElement);">&times;</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col my-2"> Job title:- </div>
+                    <div class="col-6  my-2"> <input class='a52'> </div>
+                </div>
+                <div class="row">
+                    <div class="col my-2"> City:- </div>
+                    <div class="col-6  my-2"><input class='a53'></div>
+                </div>
+                <div class="row">
+                    <div class="col my-2"> State:- </div>
+                    <div class="col-6  my-2"><input class='a54'></div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 my-2"> Start date:- </div>
+                    <div class="col-3 my-2"> 
+                        <select name="Month" class='a55'>
+                            <option value="">- Month -</option>
+                            <option value="January">January</option>
+                            <option value="Febuary">Febuary</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                    </div>
+                    <div class="col-3 my-2"> 
+                        <select name="Year" class='a56'><option value="">- Year -</option></select>
+                    </div>
+                </div>
+                <div>
+                <div class="row">
+                    <div class="col-6 my-2"> End date:- </div>
+                    <div class="col-3 my-2"> 
+                        <select name="Month" class='a57'>
+                            <option value="">- Month -</option>
+                            <option value="January">January</option>
+                            <option value="Febuary">Febuary</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                    </div>
+                    <div class="col-3 my-2"> 
+                        <select name="Year" class='a58'><option value="">- Year -</option></select>
+                    </div>
+                </div>
+                <label class="container" id="aax">I currently work here.
+                    <input type="checkbox" id="c1" onclick="checkboxfn(event)" class='a59'>
+                    <span class="checkmark"></span>
+                </label></div>
+                <div class="row">
+                    <div class="col-8" style="margin-bottom: 10px;">Training/Internship/Job description:-</textarea></div>
+                    <div class="col-4"></div>
+                </div>
+                <div class="row">
+                    <div class="col-8"><textarea cols="90" rows="5" class='a510'></textarea></div>
+                    <div class="col-4"></div>
+                </div>
+                <br><hr>
+            </div>
+            </div>
+        <div class="col-6  my-2"><button class="btn btn-primary" id="skill" onclick="xx5()">Add</button></div>
+        </div>
+
+        <div id="6" class="tabcontent">    
+        <h2>Enter your achievements and co-curricular activities you took part in:- </h2>
+        <br>
+        <div id="achcont">
+            <div class="row" id="aa6" style="display: none;">
+                <div class="col-10"><textarea cols="100" rows="2" id="ach" class='a61'></textarea></div>
+                <div class="col-2"><span class="close" onclick="this.parentElement.parentElement.parentNode.removeChild(this.parentElement.parentElement);">&times;</span></div>
+            <br><br><br></div>
+        </div>
+        <div class="col-6  my-2"><button class="btn btn-primary" id="skill" onclick="xx6()">Add</button></div>
+        </div>
+    <br>
+    <div style="text-align: center;">    
+    <button type="submit" class="btn btn-dark" id="ss" onclick="fn()">Submit</button> 
+    </div>
+
+    <div id='content'><ul>
+        
+    </div>
+    
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
